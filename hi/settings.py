@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-$u9e22km45d%n$t+)&e=lyu44bp$9xh9xtww3v#m(#a&6_@f5e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['instgram-b01o7ye37-abdelrahman-gamals-projects-6f184fc9.vercel.app']
+ALLOWED_HOSTS = ['instgram-gamma.vercel.app']
 LOGOUT_REDIRECT_URL = "/"
 
 # Application definition
@@ -128,5 +128,6 @@ MEDIA_ROOT= os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
 
 
