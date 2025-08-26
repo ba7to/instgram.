@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en,ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instgram</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(255, 255, 255);
+        }
+        img{
+            width: 100px;
+            height: 50px;
+            margin-left: 185px;
+        }
+        #f1 {
+            margin-left: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 1px;
+    background-color: rgb(255, 255, 255);
+    max-width: 350px;
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+/*
+ * Styling for the Instagram logo
+ */
+.instagram-logo {
+    margin-bottom: 20px;
+}
+
+.instagram-logo img {
+    height: 51px; /* Adjust as needed for your image */
+}
+
+/*
+ * Styling for input fields
+ */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 8px;
+    margin-bottom: 8px;
+    background-color: #fafafa;
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/*
+ * Styling for the Login button
+ */
+#b1 {
+    width: 100%;
+    padding: 8px;
+    background-color: #0095f6;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#b1:hover {
+    background-color: #007ac8;
+}
+
+/*
+ * Styling for the "Forgot password?" link
+ */
+#f1 p {
+    font-size: 12px;
+    margin-top: 12px;
+    margin-bottom: 0;
+    color: #00376b;
+}
+
+/*
+ * Styling for the "Create new account" link/button
+ */
+#f1 button:last-child {
+    background: none;
+    border: none;
+    color: #0095f6;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+#f1 button:last-child:hover {
+    text-decoration: underline;
+}
+
+/* You will also need to update your HTML to apply this CSS */
+/* Change:
+    <img src="/static/aesthetic-instagram-new-logo-p91fi4iax2puu52.Jpg">
+   To:
+    <div class="instagram-logo">
+        <img src="/static/aesthetic-instagram-new-logo-p91fi4iax2puu52.Jpg">
+    </div>
+
+   Change:
+    <p>Forget password?</p>
+   To:
+    <a href="#">Forgot password?</a>
+*/
+
+    </style>
+    <img src="/static/favicon.png"/>
+    <form id="f1" method="post">
+        {% csrf_token %} 
+        <input required name="username_input" id="user1" type="text" placeholder="Username"/>
+        <br/>
+        <br/>
+        <input required name="password_input" id="password1" type="password" placeholder="Password"/>
+        <br/>
+        <br/>
+        <button id="b1">Log in</button>
+        <p>Forget password?</p>
+        <p>Create new account</p>
+    </form>
+        <p>@Meta</p>
+        {% for x in messages %}
+        <h1>{{x}}</h1>
+        {% endfor %}
+</body>
+</html>

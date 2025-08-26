@@ -1,0 +1,26 @@
+
+
+<!DOCTYPE html>
+  {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <a href="/"><button >Log out</button></a>
+    <br/>
+    <br/>
+    {% for x in name %}
+    <h1>{{x}}</h1>
+    {% endfor %}
+    {% for Phones in phones %}
+    <h1 id="hi">{{Phones.Name}}</h1>
+    <h2>{{Phones.price}}E.P</h2>
+    <P>{{Phones.description}}</P>
+    <img src="{{Phones.img.url}}"/>
+    {% endfor %}
+</body>
+</html>

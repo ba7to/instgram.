@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign_up</title>
+
+    </head>
+    <body>
+        <style>
+              body {
+            font-family: sans-serif;
+            background-color: #f4f7f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        
+        }
+
+        /* Container for the form, with a modern, rounded-corner design */
+        .form-container {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Styling for the form's heading */
+        .form-container h2 {
+            text-align: center;
+            font-size: 1.75rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Styling for the form group, which holds each label and input */
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        /* Label styling for the input fields */
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: #555;
+            font-weight: bold;
+        }
+
+        /* Input field styling, including focus and transition effects */
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            box-sizing: border-box; /* Ensures padding doesn't affect total width */
+            transition: all 0.3s ease;
+        }
+
+        /* Change border color on focus to a nice blue */
+        .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+        }
+
+        /* Styling for the submit button */
+        .submit-button {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Darken the button on hover for a subtle effect */
+        .submit-button:hover {
+            background-color: #0056b3;
+        
+        }
+        #logo{
+            margin-bottom: 200px;
+        }
+        #f1{
+            margin-right: 150px;
+        }
+        #b1{
+            background-color:  #0056b3;
+            color: white;
+            border-style: ridge;
+            border-color: black;
+            border-radius: 15px;
+            width: 90px;
+            height: 35px;
+            margin: 10px;
+            transition:margin 1s;
+            transition:background-color 1s;
+        }
+        #b1:hover{
+            background-color: #052b54;
+        }
+        #b1:hover{
+            margin-top: 20px;
+        }
+        #user{
+            text-align: center;
+            color: blue;
+            border-style: ridge;
+            border-color: black;
+            border-radius: 15px;
+             width: 100px;
+            height: 20px;
+        }
+        #email{
+            text-align: center;
+            color: blue;
+            border-style: ridge;
+            border-color: black;
+            border-radius: 15px;
+             width: 100px;
+            height: 20px;
+        }
+        #Erro_message{
+            color: red;
+
+        }
+        </style>
+        <h1 id="logo">Register:</h1><br/><br/>
+        <form id="f1" method="post">
+            {% csrf_token %}  
+            <input id="email" type="email" required name="email" placeholder="Email"/>
+            <br/>
+            <br/>
+            <input id="user" type="password" required name="username" placeholder="password" />
+            <br/>
+            <br/>
+            <button id="b1">Sign_up</button>
+            <br/>
+            <br/>
+            {% for x in messages %}
+            <h1 id="Erro_message">{{x}}</h1>
+            {% endfor %}
+        </form>
+        </body>
+</html>
